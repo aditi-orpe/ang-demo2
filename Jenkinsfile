@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub1')
     }
     stages{
         stage("Clone the Code"){
@@ -26,7 +26,7 @@ pipeline{
         stage("Deploy"){
             steps{
                 echo "Deploy"
-                sh "docker run -d -p 80:80 aditiorpe/ang-demo2:latest"
+                sh "docker-compose down && docker-compose up -d"
             }
         }
         
