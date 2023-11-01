@@ -1,0 +1,6 @@
+version: '3.3'
+services:
+  web:
+    image: aditiorpe/ang-demo2:latest
+    ports:
+      - "80:80"
